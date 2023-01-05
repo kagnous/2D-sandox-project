@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225183c1d87383a4f95d65704b3fec01, type: 3}
+  m_Name: Mme. Crapaud
+  m_EditorClassIdentifier: 
+  charaName: Mme. Crapaud
+  normalFace: {fileID: 21300000, guid: 3f4c906450504434a9c7997658ba251a, type: 3}
+  angryFace: {fileID: 21300000, guid: 5125ec4ecf7c4404cb76140d9ff1dbe1, type: 3}
+  sadFace: {fileID: 21300000, guid: 924046a61f183e94cba922b478223ebc, type: 3}
+  happyFace: {fileID: 21300000, guid: 6e6532f221a7ea04499098e9b6e95cf4, type: 3}

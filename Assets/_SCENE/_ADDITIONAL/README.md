@@ -1,0 +1,1 @@
+scenes used in multiscenes like light scenes or sound scenes

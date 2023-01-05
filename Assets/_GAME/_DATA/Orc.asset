@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225183c1d87383a4f95d65704b3fec01, type: 3}
+  m_Name: Orc
+  m_EditorClassIdentifier: 
+  charaName: Mr. orc
+  normalFace: {fileID: 21300000, guid: 60051bdb32cb7c147ac2e1b2edf66384, type: 3}
+  angryFace: {fileID: 21300000, guid: 593bee93d8da8e34abc15b0154793b86, type: 3}
+  sadFace: {fileID: 21300000, guid: f4d4b9013ec95ad4b8670911b19fd06a, type: 3}
+  happyFace: {fileID: 21300000, guid: 9a61565512cd1544ea255c2b8607a2b2, type: 3}
