@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class Item : ScriptableObject
 {
+    [SerializeField, Min(0), Tooltip("Identifiant numérique unique de l'item")]
+    private int _ID; public int ID { get { return _ID; } }
+
     [SerializeField, Min(1), Tooltip("Maximum d'instance de l'objet pouvant être stacké")]
     private int _maxInstance = 1; public int MaxInstance { get { return _maxInstance; } set { _maxInstance = value; } }
 

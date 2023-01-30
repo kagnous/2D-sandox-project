@@ -14,6 +14,9 @@ public class DialogueManager : MonoBehaviour
     // La seule et unique instance de dialogue Manager
     public static DialogueManager instance;
 
+    [SerializeField]
+    private GlobalDataBase _dataBase;
+
     private GameObject _player;
     private DialogueController _NPC;
 
@@ -53,6 +56,11 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         instance = this;
+
+        if(_dataBase == null)
+        {
+            Debug.LogWarning("Il n'y a aucune DataBase assignée");
+        }
 
         // On récupère le Player
         _player = FindObjectOfType<PlayerController>().gameObject;
@@ -201,7 +209,7 @@ public class DialogueManager : MonoBehaviour
             switch (tagKey)
             {
                 case INKTAG_PORTRAIT:
-                    Debug.Log("Emotion : "+ tagValue);
+                        //Debug.Log("Emotion : "+ tagValue);
                     switch (tagValue)
                     {
                         case "normal":
@@ -221,9 +229,30 @@ public class DialogueManager : MonoBehaviour
                             break;
                     }
                     break;
+
                 case INKTAG_ADDFONCTION:
-                    Debug.Log("Ajout de l'item " + tagValue);
+                    
+                    if(int.TryParse(tagValue, out int ID))
+                    {
+                        bool tmp = false;
+                        for (int i = 0; i < _dataBase.AllItems.Count; i++)
+                        {
+                            if (_dataBase.AllItems[i].ID == ID)
+                            {
+                                Debug.Log($"Ajout de l'item {_dataBase.AllItems[i].name}, ID : {tagValue}");
+                                tmp = true;
+                                break;
+                            }
+                        }
+                        if(tmp == false)
+                        Debug.LogWarning($"L'ID {tagValue} n'a pas été trouvé.\nVérifiez l'ID de l'item, du Ink ainsi que sa présence dans la Database");
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"L'ID \"{tagValue}\" n'est pas une valeur numérique entière");
+                    }
                     break;
+
                 default:
                     Debug.LogWarning(tagKey + " non renonnu comme tag");
                     break;
